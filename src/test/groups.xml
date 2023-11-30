@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestNG suite">
+    <test name="Dependency Test">
+        <groups>
+            <run>
+                <include name="smoke"/>
+                <include name="regression"/>
+                <exclude name="defects.progress"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="DependencyTest">
+                <methods>
+                    <exclude name="test4SearchUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
