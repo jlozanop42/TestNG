@@ -14,6 +14,15 @@ public class DataProviderTest {
 
     }
 
+    @Test(dataProviderClass = DataProviderClass.class, dataProvider = "loginData")
+    public void loginTestWithDataProviderClass(String email, String password, boolean passed) {
+        System.out.println("Login credentials: " + "\n" +
+                "email: " + email + "\n" +
+                "password: " + password + "\n" +
+                "Sucessfull login: " + passed);
+
+    }
+
     @DataProvider
     public Object[][] loginData() {
         return new Object[][]{{"myemail@gmail.com", "1234pwd", true},
